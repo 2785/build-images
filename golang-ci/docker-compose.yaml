@@ -1,0 +1,12 @@
+version: "3"
+services:
+  golang-ci:
+    image: 2785/golang-ci:0.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GIT_COMMIT: ${GIT_COMMIT}
+        BUILD_DATE: ${BUILD_DATE}
+      labels:
+        dockerfile: "https://github.com" 
